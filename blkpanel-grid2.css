@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Matura MT Script Capitals", cursive;
+    font-size: 32px;
+    color:whitesmoke;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start at 0 opacity */
+    }
+    to {
+        opacity: 1; /* End at full opacity */
+    }
+}
+
+.fade-in {
+    animation: fadeIn 2s; /* Apply the fade-in animation over 2 seconds */
+}
+.grid-container {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    background-color: black;
+    height: 100%
+}
+.left-column {
+    margin-top:10px;
+    padding: 50px;
+}
+.right-column {
+    padding-right: 10px;
+    display: flex;
+    align-items:center;
+    /*justify-content: center;*/
+}
+    
+.continue {
+    position: relative;
+    bottom: 20px;
+    left: 100px;
+    border-radius: 5px;
+    padding: 20px;
+    text-align:center;
+    display:inline-block;
+    cursor:pointer;
+    width: 50px;
+    height:30px;
+}
+ 
+.links {
+    grid-column: 1 / -1;
+    margin-top: 20px;
+}
+.links a {
+    display:block;
+    Margin-bottom: 10px;
+    color:whitesmoke;    
+}   
+
+img {
+    max-width: 100%;
+    height: auto;
+}

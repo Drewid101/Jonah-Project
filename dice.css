@@ -1,0 +1,11 @@
+#rotatingDiv {
+        width: 100px;
+        height: 100px;
+        background-color: whitesmoke;
+        border: 2px solid lightgray;
+        text-align: center;
+        line-height: 100px; /* Vertically center text */
+        margin: 20px;
+        transition: transform 0.01s; /*Smooth rotation transition */
+        border-radius:15px;
+    }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="blkpanel-grid.css">;
+    <head>
+        <meta name="author" content="Andrew Daniel">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #rotatingDiv {
+            width: 100px;
+            height: 100px;
+            background-color: whitesmoke;
+            border: 2px solid darkred;
+            text-align: center;
+            line-height: 100px; /* Vertically center text */
+            margin: 20px;
+            transition: transform 0.01s; /*Smooth rotation transition */
+            border-radius:15px;
+            color:black
+            }
+        </style>
+    </head>
+<body>
+    <div class="fade-in">
+    <div class="grid-container">
+        <div class="left-column">
+            <p style ="font-size: 27px">&quot;The beast of burden will quicken the journey&quot;, 
+                you said to yourself, &quot;and clearly this is a divine gift!&quot;, you reasoned. 
+                You placed your load onto the camel&apos;s back and rode off 
+                thinking of how blessed you are. You had not gone much farther when you saw 
+                a glimmering expanse on the desert floor. An oasis! Surely God is blessing 
+                me in an abundant way! You dismount to camp at the water edge and refill 
+                your gourds for the ride ahead.
+            </p>
+            <p style ="font-size: 27px">Your eyes grew heavy from the weary day`s travel, 
+                but no sooner did you start to drift into sleep, you heard the sound of hooves 
+                splashing through the body of water. To your horror, three figures on camel 
+                backs armed with swords, coming directly toward you. One if the figures shouted, 
+                &quot;There it is!&quot; the weapon pointing in the direction of your four-legged &quot;blessing&quot;.
+                “…and there is the dog who took it!” said another in a tone that did not sound 
+                like a voice of reason. 
+            </p>
+            <div id="rotatingDiv">Roll</div>
+            <button onclick="startrotation()">CLICK HERE to Roll the die & determine your fate</button>
+            <script>
+                // Define an array with degrees for rotation
+                const degreesArray = [0,32,-75,45,127,0];
+
+                // Function to rotate the div by a given number of degrees
+                function rotateDivByDegrees(degrees) {
+                const rotatingDiv = document.getElementById("rotatingDiv");
+                rotatingDiv.style.transform = `rotate(${degrees}deg)`;
+                }
+
+                // Function to generate a random number between 1 and 6
+                function rollDice() {
+                return Math.floor(Math.random() * 6) + 1;
+                }
+
+                // Function to start the rotation and update the content with random numbers
+                function startrotation() {
+                    degreesArray.forEach((degrees, index) => {
+                    setTimeout(() => {
+                        const rollResult = rollDice(); // Get a random number
+                        const rotatingDiv = document.getElementById("rotatingDiv");
+                        rotatingDiv.textContent = `${rollResult}`; // Set the random number in the div
+                        rotateDivByDegrees(degrees); // Rotate by the given degrees
+                    }, index * 100); // Delay each rotation by 1 second
+                    });
+                }
+            </script>
+            <div class="links">
+                <p><a href="blkendhrsemn.html">1, 2 or 3</a></p>
+                <p><a href="goodfate.html" >4, 5 or 6</a></p>
+            </div>
+        </div>
+        <div class="right-column">
+            <img src="horsemen2.JPG" alt="Horsemen2">
+        </div>
+    </div>
+    </div>
+</body>
+</html>
